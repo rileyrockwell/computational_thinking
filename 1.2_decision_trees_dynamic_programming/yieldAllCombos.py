@@ -11,10 +11,10 @@ def powerSet(items):
 
         yield combo
 
-items = list(range(4))
-print(powerSet(items))
-
+# define a 1-dimensional row vector
 x = [0, 1]
+
+# iterate over the generator object to display the results
 for i in powerSet(x):
     print(i)
 
@@ -28,17 +28,38 @@ def yieldAllCombos(items):
     a list of which item(s) are in each bag.
     
     yields: a generator object?
+
+    hint: w/ 2 bags there are 3**N "possible combinations" (subsets)?
+
     """
-    
+    N = len(items)
+
+    # iterate over the total number of subsets in the powerset
+    for i in range(3**N):
+        bag1 = []
+        bag2 = []
+
+        # iterate over the length of items, disregarding the value of each element in items
+        for j in range(N):
+            # condition for bag1: ...
+            if (i // (3**j)) % 3 == 1:
+                # explain...
+                bag1.append(items[j])
+            # condition for bag2: ...
+            elif (i // (3**j)) % 3 == 2:
+                # explain...
+                bag2.append(items[j])
+        
+        # return the generator object to iterate over (in order to display the output)
+        # rather than using a function and having all results stored in memory.
+        yield (bag1, bag2)
 
 
-x = [0, 1]
-y = [1, 0]
-print(yieldAllCombos(x))
+        
 
+# define a 1-dimensional row vector
+x = [0]
 
-print("###")
-
-x = [0, 1]
-for i in powerSet(x):
+# iterate over the generator object to display the results
+for i in yieldAllCombos(x):
     print(i)
