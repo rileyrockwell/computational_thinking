@@ -55,10 +55,10 @@ def yieldAllCombos(items):
         yield (bag1, bag2)
 
 
-        
+print("###")        
 
 # define a 1-dimensional row vector
-x = [0]
+x = [0, 1]
 
 # iterate over the generator object to display the results
 for i in yieldAllCombos(x):
