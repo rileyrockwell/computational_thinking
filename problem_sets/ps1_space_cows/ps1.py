@@ -54,8 +54,7 @@ def greedy_cow_transport(cows,limit=10):
     transported on a particular trip and the overall list containing all the
     trips
     """
-    # TODO: Your code here
-    pass
+    
 
 
 # Problem 2
@@ -79,9 +78,7 @@ def brute_force_cow_transport(cows,limit=10):
     transported on a particular trip and the overall list containing all the
     trips
     """
-    # TODO: Your code here
-    pass
-
+    return -1
         
 # Problem 3
 def compare_cow_transport_algorithms():
@@ -106,7 +103,3 @@ Here is some test data for you to see the results of your algorithms with.
 Do not submit this along with any of your answers. Uncomment the last two
 lines to print the result of your problem.
 """
-
-
-
-
