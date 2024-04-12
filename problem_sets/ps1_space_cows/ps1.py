@@ -54,6 +54,23 @@ def greedy_cow_transport(cows,limit=10):
     transported on a particular trip and the overall list containing all the
     trips
     """
+    # gh referenced:
+    result = []
+
+    for partition in get_partitions(cows.keys()):
+        score = []
+        for trip in partition:
+            totalWeight = 0
+            for name in trip:
+                totalWeight += cows[name]
+            if totalWeight <= 10:
+                score.append(1)
+            else:
+                score.append(0)
+        if len(partition) == sum(score):
+            result.append(partition)
+
+    return result
     
 
 
@@ -78,7 +95,7 @@ def brute_force_cow_transport(cows,limit=10):
     transported on a particular trip and the overall list containing all the
     trips
     """
-    return -1
+    return "in progress..."
         
 # Problem 3
 def compare_cow_transport_algorithms():
