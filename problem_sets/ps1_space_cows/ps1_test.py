@@ -1,4 +1,4 @@
-from ps1 import *
+from ps1a import *
 
 cows = load_cows("/workspaces/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
 limit=100

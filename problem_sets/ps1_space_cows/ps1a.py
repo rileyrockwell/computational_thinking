@@ -28,7 +28,7 @@ def load_cows(filename):
     for line in f:
         line_data = line.split(',')
         cow_dict[line_data[0]] = int(line_data[1])
-    return cow_dict -1
+    return cow_dict
 
 
 # Problem 1
