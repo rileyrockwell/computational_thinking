@@ -30,7 +30,7 @@ def load_cows(filename):
         cow_dict[line_data[0]] = int(line_data[1])
     return cow_dict
 
-def greedy_algorithm(cows, limit=10):
+def greedy_cow_transport_copilot(cows, limit=10):
     """
     Implements a greedy algorithm to determine an allocation of cows that attempts to
     minimize the number of spaceship trips needed to transport all the cows. The
@@ -76,8 +76,10 @@ def greedy_algorithm(cows, limit=10):
 
     return trips
 
+
+
 # Problem 1
-def greedy_cow_transport(cows,limit=10):
+def greedy_cow_transport_github(cows,limit=10):
     """
     Uses a greedy heuristic to determine an allocation of cows that attempts to
     minimize the number of spaceship trips needed to transport all the cows. The
@@ -165,3 +167,13 @@ Here is some test data for you to see the results of your algorithms with.
 Do not submit this along with any of your answers. Uncomment the last two
 lines to print the result of your problem.
 """
+
+cows = load_cows("/workspaces/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
+
+cows = {"Jesse": 6, "Maybel": 3, "Callie": 2, "Maggie": 5}
+
+limit=10
+
+print(cows)
+
+print(greedy_cow_transport_copilot(cows, 10))
