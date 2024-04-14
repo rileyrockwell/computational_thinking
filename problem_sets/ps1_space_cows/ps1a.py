@@ -168,7 +168,6 @@ Do not submit this along with any of your answers. Uncomment the last two
 lines to print the result of your problem.
 """
 
-
 limit=10
 cows = load_cows("/workspaces/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
 testing_cows = sorted(cows.items(), key=lambda x: x[1])
