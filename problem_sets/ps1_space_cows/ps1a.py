@@ -77,7 +77,6 @@ def greedy_cow_transport_copilot(cows, limit=10):
     return trips
 
 
-
 # Problem 1
 def greedy_cow_transport_github(cows,limit=10):
     """
