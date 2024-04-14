@@ -169,7 +169,7 @@ lines to print the result of your problem.
 
 cows = load_cows("/workspaces/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
 
-cows = {"Jesse": 6, "Maybel": 3, "Callie": 2, "Maggie": 5}
+# cows = {"Jesse": 6, "Maybel": 3, "Callie": 2, "Maggie": 5}
 
 limit=10
 
