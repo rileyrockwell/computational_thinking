@@ -30,8 +30,11 @@ def load_cows(filename):
         cow_dict[line_data[0]] = int(line_data[1])
     return cow_dict
 
+
+# Problem 1
 def greedy_cow_transport_copilot(cows, limit=10):
     """
+    (1). Copilot
     Implements a greedy algorithm to determine an allocation of cows that attempts to
     minimize the number of spaceship trips needed to transport all the cows. The
     returned allocation of cows may or may not be optimal.
@@ -56,31 +59,8 @@ def greedy_cow_transport_copilot(cows, limit=10):
     A list of lists, with each inner list containing the names of cows
     transported on a particular trip and the overall list containing all the
     trips
-    """
-    sorted_cows = sorted(cows.items(), key=lambda x: x[1], reverse=True)
-
-    trips = []
-
-    while sorted_cows:
-        trip = []
-        remaining_weight = limit
-
-        for cow, weight in sorted_cows:
-            if weight <= remaining_weight:
-                trip.append(cow)
-                remaining_weight -= weight
-
-        for cow in trip:
-            sorted_cows.remove((cow, cows[cow]))
-
-        trips.append(trip)
-
-    return trips
-
-
-# Problem 1
-def greedy_cow_transport_github(cows,limit=10):
-    """
+    
+    (2). OCW
     Uses a greedy heuristic to determine an allocation of cows that attempts to
     minimize the number of spaceship trips needed to transport all the cows. The
     returned allocation of cows may or may not be optimal.
@@ -101,24 +81,26 @@ def greedy_cow_transport_github(cows,limit=10):
     transported on a particular trip and the overall list containing all the
     trips
     """
-    # gh referenced:
-    result = []
 
-    for partition in get_partitions(cows.keys()):
-        score = []
-        for trip in partition:
-            totalWeight = 0
-            for name in trip:
-                totalWeight += cows[name]
-            if totalWeight <= 10:
-                score.append(1)
-            else:
-                score.append(0)
-        if len(partition) == sum(score):
-            result.append(partition)
+    sorted_cows = sorted(cows.items(), key=lambda x: x[1], reverse=True)
 
-    return result
-    
+    trips = []
+
+    while sorted_cows:
+        trip = []
+        remaining_weight = limit
+
+        for cow, weight in sorted_cows:
+            if weight <= remaining_weight:
+                trip.append(cow)
+                remaining_weight -= weight
+
+        for cow in trip:
+            sorted_cows.remove((cow, cows[cow]))
+
+        trips.append(trip)
+
+    return trips
 
 
 # Problem 2
@@ -143,7 +125,8 @@ def brute_force_cow_transport(cows,limit=10):
     trips
     """
     return "in progress..."
-        
+
+
 # Problem 3
 def compare_cow_transport_algorithms():
     """
@@ -162,16 +145,21 @@ def compare_cow_transport_algorithms():
     pass
 
 
-"""
-Here is some test data for you to see the results of your algorithms with. 
-Do not submit this along with any of your answers. Uncomment the last two
-lines to print the result of your problem.
-"""
+def main(p1, p2):
+    return p1, p2
 
-cows = load_cows("/workspaces/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
+if __name__ == "__main__":
+    # cows = load_cows("/workspaces/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
 
-print(sorted(cows.items(), key = lambda x: x[1], reverse=False))
-print(sorted(cows.items(), key = lambda x: x[1], reverse=True))
+    # print(sorted(cows.items(), key = lambda x: x[1], reverse=False))
+    # print(sorted(cows.items(), key = lambda x: x[1], reverse=True))
 
-print("max capacity per trip: 10")
-print(greedy_cow_transport_copilot(cows, 10))
+    # print("max capacity per trip: 10")
+
+    # print(greedy_cow_transport_copilot(cows, 10))
+
+    # print("###")
+    # print("testing...")
+
+    # compare_cow_transport_algorithms()
+    pass
