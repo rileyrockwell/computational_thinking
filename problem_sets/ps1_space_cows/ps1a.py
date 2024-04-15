@@ -198,6 +198,43 @@ def brute_force_cow_transport(cows, limit=10):
     best_partition = None
     min_trips = float('inf')
 
+    
+    partitions = brute_force_partitions(cow_list)
+
+    for partition in partitions:
+        valid_partition = True
+        for subset in partition:
+            subset_weight = sum(cows[item] for item in subset)
+            if subset_weight > limit:
+                valid_partition = False
+                break
+        if valid_partition and len(partition) < min_trips:
+            min_trips = len(partition)
+            best_partition = partition
+
+    return best_partition
+
+def brute_force_partitions_copilot(items):
+        """
+        Generate all possible partitions of a set of items.
+
+        Parameters:
+        items - a list of items
+
+        Returns:
+        A list of all possible partitions, where each partition is represented
+        as a list of subsets.
+        """
+        partitions = [[]]
+        for item in items:
+            new_partitions = []
+            for partition in partitions:
+                for i in range(len(partition) + 1):
+                    new_partition = partition[:i] + [item] + partition[i:]
+                    new_partitions.append(new_partition)
+            partitions = new_partitions
+        return partitions
+
 
 
 # Problem 3
@@ -219,11 +256,8 @@ def compare_cow_transport_algorithms():
 
 
 if __name__ == "__main__":
-    cows = load_cows("/workspaces/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
+    cows = load_cows("/Users/riley/github/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
 
     print(sorted(cows.items(), key = lambda x: x[1], reverse=False))
     print(sorted(cows.items(), key = lambda x: x[1], reverse=True))
-
-    print("max capacity per trip: 10")
-
-    print(greedy_cow_transport_copilot(cows, 10))
+    print("limit: 10", greedy_cow_transport_copilot(cows, 10))
