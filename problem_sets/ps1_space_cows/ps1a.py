@@ -126,6 +126,31 @@ def brute_force_cow_transport(cows,limit=10):
     """
     return "in progress..."
 
+def brute_force_cow_transport(cows, limit=10):
+    """
+    Finds the allocation of cows that minimizes the number of spaceship trips
+    via brute force.  The brute force algorithm should follow the following method:
+
+    1. Enumerate all possible ways that the cows can be divided into separate trips
+    2. Select the allocation that minimizes the number of trips without making any trip
+        that does not obey the weight limitation
+            
+    Does not mutate the given dictionary of cows.
+
+    Parameters:
+    cows - a dictionary of name (string), weight (int) pairs
+    limit - weight limit of the spaceship (an int)
+    
+    Returns:
+    A list of lists, with each inner list containing the names of cows
+    transported on a particular trip and the overall list containing all the
+    trips
+    """
+    cow_list = list(cows.keys())
+    best_partition = None
+    min_trips = float('inf')
+
+
 
 # Problem 3
 def compare_cow_transport_algorithms():
@@ -145,21 +170,12 @@ def compare_cow_transport_algorithms():
     pass
 
 
-def main(p1, p2):
-    return p1, p2
-
 if __name__ == "__main__":
-    # cows = load_cows("/workspaces/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
+    cows = load_cows("/workspaces/computational_thinking/problem_sets/ps1_space_cows/ps1_cow_data.txt")
 
-    # print(sorted(cows.items(), key = lambda x: x[1], reverse=False))
-    # print(sorted(cows.items(), key = lambda x: x[1], reverse=True))
+    print(sorted(cows.items(), key = lambda x: x[1], reverse=False))
+    print(sorted(cows.items(), key = lambda x: x[1], reverse=True))
 
-    # print("max capacity per trip: 10")
+    print("max capacity per trip: 10")
 
-    # print(greedy_cow_transport_copilot(cows, 10))
-
-    # print("###")
-    # print("testing...")
-
-    # compare_cow_transport_algorithms()
-    pass
+    print(greedy_cow_transport_copilot(cows, 10))
