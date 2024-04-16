@@ -132,7 +132,7 @@ print()
 #testSP('Boston', 'Phoenix')
 #print()
 
-printQueue = True 
+printQueue = True
 
 def BFS(graph, start, end, toPrint = False):
     """Assumes graph is a Digraph; start and end are nodes
@@ -164,4 +164,3 @@ def shortestPath(graph, start, end, toPrint = False):
     return BFS(graph, start, end, toPrint)
     
 #testSP('Boston', 'Phoenix')
-    
