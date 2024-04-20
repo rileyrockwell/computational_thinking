@@ -1,4 +1,4 @@
-# 6.0002 Problem Set 5
+# 6.0002 Problem Set 2
 # Graph optimization
 # Name:
 # Collaborators:
@@ -20,6 +20,9 @@ from graph import Digraph, Node, WeightedEdge
 # represented?
 #
 # Answer:
+# Node: buildings
+# Edges: walking distance;
+# Distances: ???
 #
 
 
@@ -43,22 +46,34 @@ def load_map(map_filename):
         a Digraph representing the map
     """
 
-    # TODO
+    # using Digraph (incorporating Node and Edge classes) from the graph.py file
+    
+    
+
+
+
+
     print("Loading map from file...")
 
 # Problem 2c: Testing load_map
 # Include the lines used to test load_map below, but comment them out
+map_file = "/Users/riley/github/computational_thinking/ocw_template/problem_sets/2/mit_map.txt"
+print(load_map(map_file))
+
 
 
 #
 # Problem 3: Finding the Shorest Path using Optimized Search Method
-#
+# 
 # Problem 3a: Objective function
 #
 # What is the objective function for this problem? What are the constraints?
 #
 # Answer:
-#
+# Objective function (f(x) = y): find the shortest distance through the graph.
+# Contraints: distance between buidlings (node) subject to distance outdoors (...).
+# 
+# 
 
 # Problem 3b: Implement get_best_path
 def get_best_path(digraph, start, end, path, max_dist_outdoors, best_dist,

@@ -1,8 +1,13 @@
-# 6.0002 Problem Set 5
+# 6.0002 Problem Set 2S
 # Graph optimization
 # Name:
 # Collaborators:
 # Time:
+
+
+# Started: 04/19; 21:00
+# Ended: ...
+
 
 import unittest
 
@@ -36,6 +41,9 @@ class Node(object):
         return self.name.__hash__()
 
 
+
+
+
 class Edge(object):
     """Represents an edge in the dictionary. Includes a source and
     a destination."""
@@ -53,7 +61,16 @@ class Edge(object):
         return '{}->{}'.format(self.src, self.dest)
 
 
+
+
 class WeightedEdge(Edge):
+    """
+    started: 04/19; 21:00
+    ended: 
+
+
+    """
+
     def __init__(self, src, dest, total_distance, outdoor_distance):
         pass  # TODO
 
@@ -61,7 +78,7 @@ class WeightedEdge(Edge):
         pass  # TODO
 
     def get_outdoor_distance(self):
-        pass  # TODO
+        pass  # TODO 
 
     def __str__(self):
         pass  # TODO
