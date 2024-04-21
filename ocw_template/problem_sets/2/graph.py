@@ -117,7 +117,9 @@ class Digraph(object):
         """Adds an Edge or WeightedEdge instance to the Digraph. Raises a
         ValueError if either of the nodes associated with the edge is not
         in the  graph."""
-        return "tricky. go slow as fuck. calm down. take a structured, consistent, and systematic approach."
+        # GO SLOW AS FUCK. DO THINGS PROPERLY UPFRONT.
+        
+        
 
 
 # ================================================================
