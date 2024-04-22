@@ -117,10 +117,8 @@ class Digraph(object):
         """Adds an Edge or WeightedEdge instance to the Digraph. Raises a
         ValueError if either of the nodes associated with the edge is not
         in the  graph."""
-        # GO SLOW AS FUCK. DO THINGS PROPERLY UPFRONT.
-
         # do we need to set up the instance in the function or is it given in the parameter?
-        # 
+        
 
 
 # ================================================================
