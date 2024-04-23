@@ -89,7 +89,8 @@ class Digraph(object):
     """
     def __init__(self):
         self.nodes = set([])
-        self.edges = {}  # must be a dict of Node -> list of edges
+        self.edges = {}  # dict of key (Node): values (list of edges)
+                         # {Node: [edge1, edge2, ..., edgeN]}
 
     def __str__(self):
         edge_strs = []
@@ -106,22 +107,59 @@ class Digraph(object):
         return node in self.nodes
 
     def add_node(self, node):
-        """Adds a Node object to the Digraph. Raises a ValueError if it is
-        already in the graph."""
+        """
+        Adds a Node object to the Digraph. Raises a ValueError if it is
+        already in the graph.
         
-        # if the node already exists in the graph
+        clean it up. do it properly.
+
+        """
+        
+
+
+        # if node already exists in graph
         if node in self.nodes:
             raise ValueError
+        # if node does not exist
         else:
             self.nodes.add(node)
 
 
+
+
+
     def add_edge(self, edge):
-        """Adds an Edge or WeightedEdge instance to the Digraph. Raises a
+        """
+        Adds an Edge or WeightedEdge instance to the Digraph. Raises a
         ValueError if either of the nodes associated with the edge is not
-        in the  graph."""
-        # do we need to set up the instance in the function or is it given in the parameter?
-        
+        in the graph.
+        """
+        node1 = # node 1 of edge
+        node2 = # node 2 of edge
+
+        if node not in "preexisting digraph dictionary":
+            raise ValueError
+
+        else:
+            "add the edge between the nodes"
+
+
+# questions
+# [] what is the data type of a weighted edge instance?
+# [] how are the nodes "defined" in the in the WeightedEdge instance?
+# [] ...
+
+# do not modify this.
+digraph = {'G': {47, 45}, 'P': {27, 45}, 'C': {77, 45}}
+
+
+node1 = Node('G')
+node2 = Node('P')
+
+total_distance = 47 - 27
+outdoor_distance = 45 - 45
+we_instance = WeightedEdge(source, destination, total_distance, outdoor_distance)
+
 
 
 # ================================================================
@@ -160,23 +198,23 @@ class TestGraph(unittest.TestCase):
         self.assertEqual(self.e2.get_outdoor_distance(), 6)
         self.assertEqual(self.e3.get_outdoor_distance(), 1)
 
-    # def test_add_edge_to_nonexistent_node_raises(self):
-    #     node_not_in_graph = Node('q')
-    #     no_src = WeightedEdge(self.nb, node_not_in_graph, 5, 5)
-    #     no_dest = WeightedEdge(node_not_in_graph, self.na, 5, 5)
+    def test_add_edge_to_nonexistent_node_raises(self):
+        node_not_in_graph = Node('q')
+        no_src = WeightedEdge(self.nb, node_not_in_graph, 5, 5)
+        no_dest = WeightedEdge(node_not_in_graph, self.na, 5, 5)
 
-    #     with self.assertRaises(ValueError):
-    #         self.g.add_edge(no_src)
-    #     with self.assertRaises(ValueError):
-    #         self.g.add_edge(no_dest)
+        with self.assertRaises(ValueError):
+            self.g.add_edge(no_src)
+        with self.assertRaises(ValueError):
+            self.g.add_edge(no_dest)
 
-    # def test_add_existing_node_raises(self):
-    #     with self.assertRaises(ValueError):
-    #         self.g.add_node(self.na)
+    def test_add_existing_node_raises(self):
+        with self.assertRaises(ValueError):
+            self.g.add_node(self.na)
 
-    # def test_graph_str(self):
-    #     expected = "a->b (15, 10)\na->c (14, 6)\nb->c (3, 1)"
-    #     self.assertEqual(str(self.g), expected)
+    def test_graph_str(self):
+        expected = "a->b (15, 10)\na->c (14, 6)\nb->c (3, 1)"
+        self.assertEqual(str(self.g), expected)
 
 
 if __name__ == "__main__":
