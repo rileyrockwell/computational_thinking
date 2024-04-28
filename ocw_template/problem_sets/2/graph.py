@@ -63,8 +63,6 @@ class WeightedEdge(Edge):
     started: 04/19; 21:00
     ended:   04/20; 02:10
 
-    x/10.
-
     """
     def __init__(self, src, dest, total_distance, outdoor_distance):
         self.src = src
