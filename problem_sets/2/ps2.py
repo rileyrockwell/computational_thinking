@@ -60,7 +60,7 @@ def load_map(map_filename):
 map_file = "/Users/riley/github/computational_thinking/ocw_template/problem_sets/2/mit_map.txt"
 print(load_map(map_file))
 
-# testing this sentence
+print(1)
 
 
 
