@@ -65,8 +65,8 @@ class WeightedEdge(Edge):
 
     """
     def __init__(self, src, dest, total_distance, outdoor_distance):
-        self.src = src
-        self.dest = dest
+        # github
+        Edge.__init__(self, src, dest)
         self.total_distance = total_distance
         self.outdoor_distance = outdoor_distance
 
@@ -77,11 +77,17 @@ class WeightedEdge(Edge):
         return self.outdoor_distance
 
     def __str__(self):
+        # incorrect...use getter methods from Node, Edge, and WeightedEdge classes
         return '{}->{} ({}, {})'.format(self.src, self.dest, self.total_distance, self.outdoor_distance)
 
 
 class Digraph(object):
-    """Represents a directed graph of Node and Edge objects"""
+    """
+    Represents a directed graph of Node and Edge objects
+    
+    started: 04/20; 02:20
+    ended:   04/29; ...
+    """
     def __init__(self):
         self.nodes = set([])
         self.edges = {}  # must be a dict of Node -> list of edges
@@ -106,17 +112,42 @@ class Digraph(object):
         
         # if the node already exists in the graph
         if node in self.nodes:
-            raise ValueError
+            raise ValueError("Node already exists in graph")
         else:
             self.nodes.add(node)
+            # github
+            self.edges[node] = []
 
 
     def add_edge(self, edge):
         """Adds an Edge or WeightedEdge instance to the Digraph. Raises a
         ValueError if either of the nodes associated with the edge is not
         in the  graph."""
-        # do we need to set up the instance in the function or is it given in the parameter?
         
+        # github
+        src = edge.get_source()
+        dest = edge.get_destination()
+        total = edge.get_total_distance()
+        outdoor = edge.get_outdoor_distance()
+
+        w_edge = WeightedEdge(src, dest, total, outdoor)
+
+        if not (src in self.nodes and dest in self.nodes):
+            raise ValueError("Node not in graph")
+        
+        self.edges[src].append(w_edge)
+
+    # def __str__(self):
+    # ...
+
+
+
+
+    # what does a weighted edge instance look like? what are the instance attributes?
+
+
+# setup a weighted edge instance to determine the instance attributes:
+instance = WeightedEdge(30, 32, 70, 76)
 
 
 # ================================================================
