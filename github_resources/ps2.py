@@ -4,7 +4,10 @@
 # Collaborators: Thang Tran
 # Time: Way too long
 
-#
+# GENERATED NONE OF THIS CODE
+
+# RESOURCE: https://github.com/tuthang102/MIT-6.0002-Intro-to-Computational-Thinking-and-Data-Science/blob/master/PS2/ps2.py
+
 # Finding shortest paths through MIT buildings
 #
 import unittest
