@@ -88,7 +88,7 @@ def locally_optimal(cows,limit=10):
     trips
     """
     # TODO: Your code here
-    return "not completed..."
+    pass
     
 
 # Problem 4
