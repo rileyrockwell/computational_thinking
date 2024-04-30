@@ -144,11 +144,6 @@ class Digraph(object):
             "add the edge between the nodes"
 
 
-# questions
-# [] what is the data type of a weighted edge instance?
-# [] how are the nodes "defined" in the in the WeightedEdge instance?
-# [] ...
-
 # do not modify this.
 digraph = {'G': {47, 45}, 'P': {27, 45}, 'C': {77, 45}}
 
@@ -159,7 +154,6 @@ node2 = Node('P')
 total_distance = 47 - 27
 outdoor_distance = 45 - 45
 we_instance = WeightedEdge(source, destination, total_distance, outdoor_distance)
-
 
 
 # ================================================================

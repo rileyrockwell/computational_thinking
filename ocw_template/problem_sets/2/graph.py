@@ -135,15 +135,12 @@ class Digraph(object):
         if not (src in self.nodes and dest in self.nodes):
             raise ValueError("Node not in graph")
         
-        self.edges[src].append(w_edge)
-
-    # def __str__(self):
-    # ...
+        self.edges[src].append(w_edge
 
 
 
 
-    # what does a weighted edge instance look like? what are the instance attributes?
+        # what does a weighted edge instance look like? what are the instance attributes?
 
 
 # setup a weighted edge instance to determine the instance attributes:

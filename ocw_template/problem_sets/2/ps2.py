@@ -23,7 +23,6 @@ from graph import Digraph, Node, WeightedEdge
 # Node: buildings
 # Edges: walking distance;
 # Distances: ???
-#
 
 
 # Problem 2b: Implementing load_map
