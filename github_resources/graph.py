@@ -1,13 +1,8 @@
-# 6.0002 Problem Set 2S
+# 6.0002 Problem Set 5
 # Graph optimization
-# Name:
-# Collaborators:
-# Time:
-
-
-# Started: 04/19; 21:00
-# Ended: ...
-
+# Name: Thang Tran
+# Collaborators: Thang Tran
+# Time: Not very long
 
 import unittest
 
@@ -59,14 +54,9 @@ class Edge(object):
 
 
 class WeightedEdge(Edge):
-    """
-    started: 04/19; 21:00
-    ended:   04/20; 02:10
-
-    """
     def __init__(self, src, dest, total_distance, outdoor_distance):
-        # github
         Edge.__init__(self, src, dest)
+
         self.total_distance = total_distance
         self.outdoor_distance = outdoor_distance
 
@@ -77,17 +67,12 @@ class WeightedEdge(Edge):
         return self.outdoor_distance
 
     def __str__(self):
-        # incorrect...use getter methods from Node, Edge, and WeightedEdge classes
-        return '{}->{} ({}, {})'.format(self.src, self.dest, self.total_distance, self.outdoor_distance)
+        return self.src.get_name() + '->' + self.dest.get_name() + ' (' + str(self.get_total_distance()) + ', ' + \
+        str(self.get_outdoor_distance()) + ')'
 
 
 class Digraph(object):
-    """
-    Represents a directed graph of Node and Edge objects
-    
-    started: 04/20; 02:20
-    ended:   04/29; ...
-    """
+    """Represents a directed graph of Node and Edge objects"""
     def __init__(self):
         self.nodes = set([])
         self.edges = {}  # must be a dict of Node -> list of edges
@@ -107,45 +92,33 @@ class Digraph(object):
         return node in self.nodes
 
     def add_node(self, node):
-        """Adds a Node object to the Digraph. Raises a ValueError if it is
-        already in the graph."""
-        
-        # if the node already exists in the graph
         if node in self.nodes:
-            raise ValueError("Node already exists in graph")
+            raise ValueError('Duplicate node')
         else:
             self.nodes.add(node)
-            # github
             self.edges[node] = []
-
 
     def add_edge(self, edge):
         """Adds an Edge or WeightedEdge instance to the Digraph. Raises a
         ValueError if either of the nodes associated with the edge is not
         in the  graph."""
-        
-        # github
+
         src = edge.get_source()
         dest = edge.get_destination()
         total = edge.get_total_distance()
         outdoor = edge.get_outdoor_distance()
-
-        w_edge = WeightedEdge(src, dest, total, outdoor)
-
+        ed = WeightedEdge(src, dest, total, outdoor)
+        # self.edges[src] = []
         if not (src in self.nodes and dest in self.nodes):
-            raise ValueError("Node not in graph")
-        
-        self.edges[src].append(w_edge)
-
+            raise ValueError('Node not in graph')
+        self.edges[src].append(ed)
     
     def __str__(self):
-        result = ""
+        result = ''
         for src in self.edges:
-            for edges in self.edges[src]:
-                result = result + str(edges) + "\n"
-            
+            for eds in self.edges[src]:
+                result = result + str(eds) + '\n'
         return result[:-1]
-
 
 
 # ================================================================
@@ -202,8 +175,5 @@ class TestGraph(unittest.TestCase):
         expected = "a->b (15, 10)\na->c (14, 6)\nb->c (3, 1)"
         self.assertEqual(str(self.g), expected)
 
-
 if __name__ == "__main__":
     unittest.main()
-
-    instance = Digraph()
