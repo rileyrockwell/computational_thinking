@@ -4,7 +4,7 @@
 # Collaborators: Thang Tran
 # Time: Way too long
 
-# GENERATED NONE OF THIS CODE
+# GENERATED NONE OF THIS CODE (FOR TESTING PURPOSES)
 
 # RESOURCE: https://github.com/tuthang102/MIT-6.0002-Intro-to-Computational-Thinking-and-Data-Science/blob/master/PS2/ps2.py
 
@@ -22,9 +22,11 @@ from graph import Digraph, Node, WeightedEdge
 # do the graph's edges represent? Where are the distances
 # represented?
 #
-# Answer: graph's noes represent buildings. Graph's edges represent the paths connected the buildings. Distances are
+# Answer: graph's nodes represent buildings. Graph's edges represent the paths connected the buildings. Distances are
 #         represented in the weighs associated with each edge
 
+
+map_filename = "/home/riley/github/computational_thinking/github_resources/mit_map.txt"
 
 # Problem 2b: Implementing load_map
 def load_map(map_filename):
@@ -46,6 +48,8 @@ def load_map(map_filename):
         a Digraph representing the map
     """
 
+    map_filename = "/home/riley/github/computational_thinking/github_resources/mit_map.txt"
+
     # TODO
     # print("Loading map from file...")
     file = open(map_filename, 'r') # open the file
@@ -66,7 +70,9 @@ def load_map(map_filename):
 # Problem 2c: Testing load_map
 # Include the lines used to test load_map below, but comment them out
 
-# g = load_map('test_load_map.txt')
+
+
+g = load_map('/home/riley/github/computational_thinking/github_resources/mit_map.txt')
 # print(str(g))
 #
 # Problem 3: Finding the Shorest Path using Optimized Search Method

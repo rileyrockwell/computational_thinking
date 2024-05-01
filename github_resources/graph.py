@@ -5,7 +5,7 @@
 # Time: Not very long
 
 
-# GENERATED NONE OF THIS CODE
+# GENERATED NONE OF THIS CODE (FOR TESTING PURPOSES)
 
 # RESOURCE: https://github.com/tuthang102/MIT-6.0002-Intro-to-Computational-Thinking-and-Data-Science/blob/master/PS2/graph.py
 
