@@ -132,11 +132,7 @@ class Digraph(object):
 
         w_edge = WeightedEdge(src, dest, total, outdoor)
 
-        if not (src in self.nodes and dest in self.nodes):
-            raise ValueError("Node not in graph")
         
-        self.edges[src].append(w_edge)
-
     
     def __str__(self):
         result = ""

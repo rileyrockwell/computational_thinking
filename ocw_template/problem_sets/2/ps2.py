@@ -44,19 +44,24 @@ def load_map(map_filename):
     Returns:
         a Digraph representing the map
     """
+    file = open(map_filename, 'r') # open the file
+    g = Digraph()
+    for line in file:  # read each line of the file
+        line = line.strip('\n')  # remove the \n character
+        line = line.split(' ')
+        for i in range(0, 2):
+            nod = Node(line[i])
+            if not g.has_node(nod):
+                g.add_node(nod)
+        wei_edge = WeightedEdge(Node(line[0]), Node(line[1]), int(line[2]), int(line[3]))
+        g.add_edge(wei_edge)
+    file.close()
+    return g
 
-    # using Digraph (incorporating Node and Edge classes) from the graph.py file
-    pass
-    
-
-
-
-
-    print("Loading map from file...")
 
 # Problem 2c: Testing load_map
 # Include the lines used to test load_map below, but comment them out
-map_file = "/Users/riley/github/computational_thinking/ocw_template/problem_sets/2/mit_map.txt"
+map_file = "/home/riley/github/computational_thinking/ocw_template/problem_sets/2/mit_map.txt"
 print(load_map(map_file))
 
 
