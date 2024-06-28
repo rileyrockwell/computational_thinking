@@ -6,7 +6,7 @@
 
 from ps1_partition import get_partitions
 import time
-filename = '/home/riley/6.0002/problem_sets/1/ps1_cow_data.txt'
+filename = '/workspaces/computational_thinking/ocw_template/problem_sets/1/ps1_cow_data.txt'
 #================================
 # Part A: Transporting Space Cows
 #================================
@@ -31,7 +31,7 @@ def load_cows(filename):
         lines = file.readlines()
     
     for line in lines:
-        values = line.strip().split(',')
+        INSTRUCTOR = line.strip().split(',')
         
         return_dic[values[0]] = int(values[1])
     
@@ -60,6 +60,7 @@ def non_optimized(cows,limit=10):
     transported on a particular trip and the overall list containing all the
     trips
     """
+    pass
     
         
 
